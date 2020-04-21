@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "219625746232",
+    "firebase_url": "https://filmuapp-1.firebaseio.com",
+    "project_id": "filmuapp-1",
+    "storage_bucket": "filmuapp-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219625746232:android:ae0970274c389e179c1bcd",
+        "android_client_info": {
+          "package_name": "lt.reactseals.akademija.filmuapp_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219625746232-j4m26c1obed8fv5n0l03j9m8nffsv4ne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0n_Zyij_0BbSzt6NX-JJFB16kRA6eYw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219625746232-j4m26c1obed8fv5n0l03j9m8nffsv4ne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
