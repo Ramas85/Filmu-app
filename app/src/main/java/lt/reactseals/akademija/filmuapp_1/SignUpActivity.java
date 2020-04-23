@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -78,13 +79,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "User Registered successfull", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Some error ocurred", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        Toast.makeText(getApplicationContext(), "A user with the same email already exists, use another email adress", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
-
-
     }
 
     @Override
@@ -93,13 +97,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.buttonSignUp:
                 registerUser();
                 break;
-
             case R.id.textViewLogin:
                 //jei spaudziam Login gryzta atgal i musu maina.
-                startActivity(new Intent(this, Main2Activity.class));
+                startActivity(new Intent(this, LoginActivity.class));
 
                 break;
         }
 
     }
 }
+
