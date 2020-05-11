@@ -51,7 +51,6 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
 
     }
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -73,12 +72,11 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
 //                Toast.makeText(this, "favorite", Toast.LENGTH_SHORT).show();
             case R.id.nav_logout:
                 Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
-                //jeigu norim issilogint nesinaudojant Firebase
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
                 //Clear Stack(isvalo stack,task)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-               // startActivity(new Intent(ProfileActivity.this , MainActivityTwo.class));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                // startActivity(new Intent(ProfileActivity.this , MainActivityTwo.class));
                 startActivity(intent);
         }
         drawer.closeDrawer(GravityCompat.START);
