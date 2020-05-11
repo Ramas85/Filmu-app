@@ -11,16 +11,18 @@
                     android:id="@+id/nav_popular"
                     android:icon="@drawable/ic_one"
                     android:title="The most popular movies" />
-
                 <item
                     android:id="@+id/nav_latest"
                     android:icon="@drawable/ic_two"
                     android:title="The latest movies" />
-
                 <item
                     android:id="@+id/nav_willsoon"
                     android:icon="@drawable/ic_three"
                     android:title="Movies that will soon be shown" />
+                <item
+                    android:id="@+id/nav_favorite"
+                    android:icon="@drawable/ic_favorite"
+                    android:title="Favorite" />
             </group>
         </menu>
     </item>
@@ -35,10 +37,14 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_send"
                 android:title="Send" />
-
         </menu>
-
     </item>
-
-
+    <item android:title="Others features">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout" />
+        </menu>
+    </item>
 </menu>
